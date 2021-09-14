@@ -1,15 +1,4 @@
 
-Select *
-From PortfolioProject.dbo.CovidDeaths
-Where continent is not null
-Order by 3,4
-
-
-
---Select *
---From PortfolioProject.dbo.CovidVaccination
---Order by 3,4
-
 
 -- Looking at Cases in different countries
 

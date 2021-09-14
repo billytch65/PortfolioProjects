@@ -25,7 +25,7 @@ Where continent is not null and	Location = 'United Kingdom'
 Order by 1,2
 
 
--- Looking at Countries with the highest infection rate compared to population
+-- Looking at Countries with the highest infection rate
 
 Select Location, Population, max(total_cases) as HighestInfectionCount, max((Total_Cases/population))*100 as PercentPopulationInfected
 From PortfolioProject.dbo.CovidDeaths
@@ -34,7 +34,7 @@ Group by Location, Population
 Order by PercentPopulationInfected desc
 
 
--- Showing the Countries with the highest death count per population
+-- Showing the Countries with the highest death count
 
 Select Location, max(cast(total_deaths as int)) as TotalDeathCount
 From PortfolioProject.dbo.CovidDeaths
@@ -52,7 +52,7 @@ Group by continent
 Order by TotalDeathCount desc
 
 
--- LOOKING AT GLOBAL NUMBERS
+-- LOOKING AT GLOBAL NUMBERS - Death Percentage by day
 
 Select date, sum(new_cases) as Total_Cases, sum(cast(new_deaths as int)) as Total_Deaths, sum(cast(new_deaths as int))/sum(new_cases)*100 as Death_Percentage
 From PortfolioProject.dbo.CovidDeaths
